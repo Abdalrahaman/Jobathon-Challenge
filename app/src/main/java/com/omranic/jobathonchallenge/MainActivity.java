@@ -18,8 +18,11 @@ public class MainActivity extends AppCompatActivity {
         // Result Task 1
         Log.d(TAG, "Result is : " + t.solution1("aaa"));
         // Result Task 2
-        Log.d(TAG, "Icon " + t.solution2(new int[]{100, 200, 100}, new int[]{50, 100, 100}, 100, 100)
-                + " is clicked");
-
+        int index = t.solution2(new int[]{100, 200, 100}, new int[]{50, 100, 100}, 100, 100);
+        if (index == -1){
+            Log.d(TAG, "No icon clicked");
+        }else{
+            Log.d(TAG, "Icon " + index + " is clicked");
+        }
     }
 }

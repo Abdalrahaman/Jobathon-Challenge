@@ -46,8 +46,8 @@ public class Task {
 
                 if(A[i] > 0 && A[i] < 1919 && B[i] > 0 && B[i] < 1079 && x > 0 && x < 1919 && y > 0 && y < 1079){
 
-                    int r1 = (x - A[i]) * (x - A[i]);
-                    int r2 = (y - B[i]) * (y - B[i]);
+                    double r1 = Math.pow(x - A[i] , 2);
+                    double r2 = Math.pow(y - B[i], 2);
                     double d = Math.sqrt(r1 + r2);
                     if (d == r){
                         Log.d(TAG, "solution2: Inside center");
