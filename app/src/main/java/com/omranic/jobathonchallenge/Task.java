@@ -1,9 +1,5 @@
 package com.omranic.jobathonchallenge;
 
-import android.util.Log;
-
-import java.util.regex.Pattern;
-
 public class Task {
 
     public Task(){
