@@ -1,11 +1,15 @@
 package com.omranic.jobathonchallenge;
 
+import android.util.Log;
+
 public class Task {
+
+    private static final String TAG = "Task";
 
     public Task(){
     }
 
-    public Boolean solution(String word) {
+    public Boolean solution1(String word) {
 
         Character ch1 = 'a';
         Character ch2 = 'b';
@@ -29,5 +33,28 @@ public class Task {
             return false;
         }
         return true;
+    }
+
+
+    public int solution2(int[] A, int[] B, int x, int y){
+
+        double r = 20.0;
+
+        for (int i = 0; i<A.length; i++){
+
+            int r1 = (x - A[i]) * (x - A[i]);
+            int r2 = (y - B[i]) * (y - B[i]);
+            double d = Math.sqrt(r1 + r2);
+            if (d == r){
+                Log.d(TAG, "solution2: Inside center");
+                return i;
+            }else if (d < r){
+                Log.d(TAG, "solution2: Inside");
+                return i;
+            }else {
+                Log.d(TAG, "solution2: outside");
+            }
+        }
+        return -1;
     }
 }
