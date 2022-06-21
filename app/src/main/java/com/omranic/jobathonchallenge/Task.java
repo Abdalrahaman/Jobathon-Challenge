@@ -40,19 +40,25 @@ public class Task {
 
         double r = 20.0;
 
-        for (int i = 0; i<A.length; i++){
+        if (A.length > 1 && A.length < 100 && A.length == B.length){
 
-            int r1 = (x - A[i]) * (x - A[i]);
-            int r2 = (y - B[i]) * (y - B[i]);
-            double d = Math.sqrt(r1 + r2);
-            if (d == r){
-                Log.d(TAG, "solution2: Inside center");
-                return i;
-            }else if (d < r){
-                Log.d(TAG, "solution2: Inside");
-                return i;
-            }else {
-                Log.d(TAG, "solution2: outside");
+            for (int i = 0; i < A.length; i++){
+
+                if(A[i] > 0 && A[i] < 1919 && B[i] > 0 && B[i] < 1079 && x > 0 && x < 1919 && y > 0 && y < 1079){
+
+                    int r1 = (x - A[i]) * (x - A[i]);
+                    int r2 = (y - B[i]) * (y - B[i]);
+                    double d = Math.sqrt(r1 + r2);
+                    if (d == r){
+                        Log.d(TAG, "solution2: Inside center");
+                        return i;
+                    }else if (d < r){
+                        Log.d(TAG, "solution2: Inside");
+                        return i;
+                    }else {
+                        Log.d(TAG, "solution2: outside");
+                    }
+                }
             }
         }
         return -1;
